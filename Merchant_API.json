@@ -21,14 +21,26 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/Merchant"
+                  "$ref": "#/components/schemas/MerchantResponse"
                 }
               }
             }
           }
         }
       }
-    }
+    },
+"post": {
+        "summary": "Create a new merchant",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MerchantResponse"
+              }
+            }
+          }
+        }
   },
   "/merchants/{id}": {
     "get": {
@@ -49,7 +61,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Merchant"
+                "$ref": "#/components/schemas/MerchantsResponse"
               }
             }
           }
