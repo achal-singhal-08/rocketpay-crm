@@ -9,6 +9,11 @@
     "url": "https://34.8.142.182.nip.io"
   }
 ],
+"servers": [
+  {
+    "url": "https://34.8.142.182.nip.io"
+  }
+],
 "paths": {
   "/merchants": {
     "get": {
@@ -21,26 +26,14 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/MerchantsResponse"
+                  "$ref": "#/components/schemas/Merchant"
                 }
               }
             }
           }
         }
       }
-    },
-"post": {
-        "summary": "Create a new merchant",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MerchantsResponse"
-              }
-            }
-          }
-        }
+    }
   },
   "/merchants/{id}": {
     "get": {
@@ -61,7 +54,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MerchantsResponse"
+                "$ref": "#/components/schemas/Merchant"
               }
             }
           }
