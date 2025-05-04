@@ -5,54 +5,59 @@
         "version": "1.0.0"
     },
     "servers": [
+  {
+    "url": "https://34.8.142.182.nip.io"
+  }
+],
+"paths": {
+  "/merchants": {
+    "get": {
+      "summary": "List all merchants",
+      "responses": {
+        "200": {
+          "description": "A list of merchants",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Merchant"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/merchants/{id}": {
+    "get": {
+      "summary": "Get a merchant by ID",
+      "parameters": [
         {
-            "url": "https://34.8.142.182.nip.io/merchants"
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
         }
-    ],
-    "paths": {
-        "": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MerchantsResponse"
-                                }
-                            }
-                        }
-                    }
-                }
+      ],
+      "responses": {
+        "200": {
+          "description": "Merchant details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Merchant"
+              }
             }
-        },
-        "{id}": {
-            "get": {
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MerchantsResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+          }
         }
-    },
+      }
+    }
+  }
+},
     "components": {
         "schemas": {
             "Merchant": {
