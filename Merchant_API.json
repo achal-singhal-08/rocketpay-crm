@@ -4,11 +4,6 @@
         "title": "Merchants API",
         "version": "1.0.0"
     },
-    "servers": [
-  {
-    "url": "https://34.8.142.182.nip.io"
-  }
-],
 "servers": [
   {
     "url": "https://34.8.142.182.nip.io"
