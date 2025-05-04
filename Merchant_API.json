@@ -10,42 +10,17 @@
         }
     ],
     "paths": {
-        "": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MerchantsResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/{id}": {
-            "get": {
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/MerchantsResponse"
-                                }
+    "": {
+        "get": {
+            "operationId": "getAllMerchants",
+            "description": "Get all merchants",
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MerchantsResponse"
                             }
                         }
                     }
@@ -53,6 +28,35 @@
             }
         }
     },
+    "/{merchantId}": {
+        "get": {
+            "operationId": "getMerchantById",
+            "description": "Get merchant by ID",
+            "parameters": [
+                {
+                    "name": "merchantId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MerchantsResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+},
     "components": {
         "schemas": {
             "Merchant": {
