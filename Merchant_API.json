@@ -11,37 +11,53 @@
 ],
 "paths": {
   "/merchants": {
-    "get": {
-      "summary": "List all merchants",
-      "responses": {
-        "200": {
-          "description": "A list of merchants",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/MerchantResponse"
-                }
+  "get": {
+    "summary": "List all merchants",
+    "responses": {
+      "200": {
+        "description": "A list of merchants",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/MerchantsResponse"
               }
             }
           }
         }
       }
+    }
+  },
+  "post": {
+    "summary": "Create a new merchant",
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/MerchantsResponse"
+          }
+        }
+      }
     },
-"post": {
-        "summary": "Create a new merchant",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MerchantResponse"
-              }
+    "responses": {
+      "201": {
+        "description": "Merchant created successfully",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/MerchantsResponse"
             }
           }
         }
-  },
+      },
+      "400": {
+        "description": "Invalid input"
+      }
+    }
+  }
+},
   "/merchants/{id}": {
     "get": {
       "summary": "Get a merchant by ID",
@@ -69,7 +85,7 @@
       }
     }
   }
-},
+,
     "components": {
         "schemas": {
             "Merchant": {
