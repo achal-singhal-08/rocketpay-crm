@@ -1,3 +1,4 @@
+
 {
     "openapi": "3.0.0",
     "info": {
@@ -6,44 +7,15 @@
     },
     "servers": [
         {
-            "url": "https://34.8.142.182.nip.io"
+            "url": "https://34.8.142.182.nip.io/merchants"
         }
     ],
     "paths": {
-        "/merchants": {
+        "": {
             "get": {
-                "summary": "List all merchants",
                 "responses": {
                     "200": {
-                        "description": "A list of merchants",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/MerchantsResponse"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "summary": "Create a new merchant",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/MerchantsResponse"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Merchant created successfully",
+                        "description": "Successful response",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -51,16 +23,12 @@
                                 }
                             }
                         }
-                    },
-                    "400": {
-                        "description": "Invalid input"
                     }
                 }
             }
         },
-        "/merchants/{id}": {
+        "{id}": {
             "get": {
-                "summary": "Get a merchant by ID",
                 "parameters": [
                     {
                         "name": "id",
@@ -73,7 +41,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Merchant details",
+                        "description": "Successful response",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -84,68 +52,68 @@
                     }
                 }
             }
-        },
-        "components": {
-            "schemas": {
-                "Merchant": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "string"
-                        },
-                        "name": {
-                            "type": "string"
-                        },
-                        "phone_number": {
-                            "type": "string"
-                        },
-                        "pin_code": {
-                            "type": "string"
-                        },
-                        "address": {
-                            "type": "string"
-                        },
-                        "city": {
-                            "type": "string"
-                        },
-                        "state": {
-                            "type": "string"
-                        },
-                        "latitude": {
-                            "type": "number"
-                        },
-                        "longitude": {
-                            "type": "number"
-                        },
-                        "business_name": {
-                            "type": "string"
-                        },
-                        "business_mobile_number": {
-                            "type": "string",
-                            "nullable": true
-                        },
-                        "gst": {
-                            "type": "string"
-                        },
-                        "business_type": {
-                            "type": "string"
-                        },
-                        "business_category": {
-                            "type": "string"
-                        },
-                        "business_email_id": {
-                            "type": "string"
-                        }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Merchant": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "phone_number": {
+                        "type": "string"
+                    },
+                    "pin_code": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "business_name": {
+                        "type": "string"
+                    },
+                    "business_mobile_number": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "gst": {
+                        "type": "string"
+                    },
+                    "business_type": {
+                        "type": "string"
+                    },
+                    "business_category": {
+                        "type": "string"
+                    },
+                    "business_email_id": {
+                        "type": "string"
                     }
-                },
-                "MerchantsResponse": {
-                    "type": "object",
-                    "properties": {
-                        "merchants": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/components/schemas/Merchant"
-                            }
+                }
+            },
+            "MerchantsResponse": {
+                "type": "object",
+                "properties": {
+                    "merchants": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Merchant"
                         }
                     }
                 }
