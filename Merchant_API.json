@@ -150,6 +150,9 @@
                     },
                     "phone_number": {
                         "type": "string"
+                    }
+                    "secondary_phone_number": {
+                        "type": "string"
                     },
                     "pin_code": {
                         "type": "string"
