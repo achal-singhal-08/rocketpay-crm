@@ -116,108 +116,82 @@
                         "type": "string"
                     },
                     "visit_date": {
-                        "type": "integer",
-                        "format": "int64"
+                        "type": "number"
                     },
                     "visit_outcome": {
                         "type": "string"
                     },
                     "next_visit_date": {
-                        "type": "integer",
-                        "format": "int64",
-                        "nullable": true
+                        "type": "number"
                     },
                     "not_interested_reason": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "other_key_company": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "other_key_price": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "other_key_stock": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "other_key_details": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "service_visit_reason": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "mode_of_sale": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "price_per_key": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "sold_quantity": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "free_quantity": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "advance": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "advance_proof": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "payment_towards": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "rocket_pay_finance": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "interest": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "credit_sales": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "free_quantity_now": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "payable_date": {
-                        "type": "integer",
-                        "format": "int64",
-                        "nullable": true
+                        "type": "number"
                     },
                     "remarks": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "previous_visit_id": {
-                        "type": "string",
-                        "nullable": true
+                        "type": "string"
                     },
                     "product": {
                         "type": "string"
                     },
                     "latitude": {
-                        "type": "number",
-                        "nullable": true
+                        "type": "number"
                     },
                     "longitude": {
-                        "type": "number",
-                        "nullable": true
+                        "type": "number"
                     }
                 }
             },
