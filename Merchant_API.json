@@ -12,7 +12,7 @@
     ],
     "paths": {
         "/merchants": {
-            "get": {
+           "get": {
                 "summary": "List all merchants",
                 "responses": {
                     "200": {
@@ -25,7 +25,11 @@
                             }
                         }
                     }
-                }
+                },
+                 "x-filter": {
+                    "type": RHS-Colon           
+                 }
+         
             },
             "post": {
                 "summary": "Create a new merchant",
