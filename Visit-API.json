@@ -11,7 +11,7 @@
         }
     ],
     "paths": {
-        "/visit": {
+        "/visits": {
             "get": {
                 "summary": "List all visits",
                 "responses": {
@@ -63,7 +63,7 @@
                 }
             }
         },
-        "/visit/{id}": {
+        "/visits/{id}": {
             "get": {
                 "summary": "Get a visit by ID",
                 "parameters": [
