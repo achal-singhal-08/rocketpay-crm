@@ -25,7 +25,10 @@
                             }
                         }
                     }
-                }
+                },
+                 "x-filter": {
+                    "type": "RHS-Colon"           
+                 }
             },
             "post": {
                 "summary": "Create a new visit",
