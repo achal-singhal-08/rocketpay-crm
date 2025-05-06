@@ -195,6 +195,9 @@
                     },
                     "longitude": {
                         "type": "number"
+                    },
+                    "user_token": {
+                        "type": "string"
                     }
                 }
             },
