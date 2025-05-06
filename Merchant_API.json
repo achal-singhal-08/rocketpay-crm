@@ -27,7 +27,7 @@
                     }
                 },
                  "x-filter": {
-                    "type": "RHS-Colon"           
+                    "type": "LHS-Brackets"           
                  }
          
             },
