@@ -1,0 +1,259 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Visit API",
+        "version": "1.0.0",
+        "description": "RESTful API for managing visit information. Optimized for Apigee deployment."
+    },
+    "servers": [
+        {
+            "url": "https://34.8.142.182.nip.io"
+        }
+    ],
+    "paths": {
+        "/visit": {
+            "get": {
+                "summary": "List all visits",
+                "responses": {
+                    "200": {
+                        "description": "A list of visits",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VisitsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new visit",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Visit"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Visit created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Visit"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/visit/{id}": {
+            "get": {
+                "summary": "Get a visit by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Visit details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Visit"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Visit not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Visit": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "merchant_id": {
+                        "type": "string"
+                    },
+                    "sale_agent_id": {
+                        "type": "string"
+                    },
+                    "visit_date": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "visit_outcome": {
+                        "type": "string"
+                    },
+                    "next_visit_date": {
+                        "type": "integer",
+                        "format": "int64",
+                        "nullable": true
+                    },
+                    "not_interested_reason": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "other_key_company": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "other_key_price": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "other_key_stock": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "other_key_details": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "service_visit_reason": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mode_of_sale": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "price_per_key": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sold_quantity": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "free_quantity": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "advance": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "advance_proof": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "payment_towards": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rocket_pay_finance": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "interest": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "credit_sales": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "free_quantity_now": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "payable_date": {
+                        "type": "integer",
+                        "format": "int64",
+                        "nullable": true
+                    },
+                    "remarks": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "previous_visit_id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "product": {
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "type": "number",
+                        "nullable": true
+                    },
+                    "longitude": {
+                        "type": "number",
+                        "nullable": true
+                    }
+                }
+            },
+            "VisitsResponse": {
+                "type": "object",
+                "properties": {
+                    "visits": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Visit"
+                        }
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
