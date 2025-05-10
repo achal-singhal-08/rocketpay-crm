@@ -32,7 +32,7 @@
                 "x-pagination": {
                     "type": "cursor",
                     "limitParam": "page_size",
-                    "defaultLimit": 50,
+                    "defaultLimit": 1,
                     "cursorParam": "page_token"
                 }
          
