@@ -28,7 +28,7 @@
                 },
                  "x-filter": {
                     "type": "RHS-Colon"           
-                 },
+                 }
                 
             },
             "post": {
