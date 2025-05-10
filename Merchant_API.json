@@ -30,12 +30,11 @@
                     "type": "RHS-Colon"           
                  },
                 "x-pagination": {
-                    "type": "offset",
-                    "limitParam": "limit",
-                    "defaultLimit": 1,
-                    "offsetParam": "offset",
-                    "defaultOffset": 0
-        }
+                    "type": "cursor",
+                    "limitParam": "page_size",
+                    "defaultLimit": 50,
+                    "cursorParam": "page_token"
+                }
          
             },
             "post": {
