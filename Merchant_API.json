@@ -160,6 +160,9 @@
                     "secondary_phone_number": {
                         "type": "string"
                     },
+                    "description": {
+                        "type": "string"
+                    },
                     "pin_code": {
                         "type": "string"
                     },
