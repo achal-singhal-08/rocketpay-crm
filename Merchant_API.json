@@ -193,6 +193,9 @@
                     },
                     "business_email_id": {
                         "type": "string"
+                    },
+                    "user_token": {
+                        "type": "string"
                     }
                 }
             },
