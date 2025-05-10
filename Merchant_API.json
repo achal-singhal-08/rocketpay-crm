@@ -148,6 +148,9 @@
                     "id": {
                         "type": "string"
                     },
+                    "merchant_id": {
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
                     },
