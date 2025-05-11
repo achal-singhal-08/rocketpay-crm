@@ -1,0 +1,58 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Pincode Mapping API",
+        "version": "1.0.0",
+        "description": "RESTful API for managing Pincode Mapping information. Optimized for Apigee deployment."
+    },
+    "servers": [
+        {
+            "url": "https://34.8.142.182.nip.io"
+        }
+    ],
+    "paths": {
+        "/pincode_mappings": {
+            "get": {
+                "summary": "List all Pincode Mapping",
+                "responses": {
+                    "200": {
+                        "description": "A list of Pincode Mapping",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PincodeMappingResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PincodeMapping": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "pincode": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PincodeMappingResponse": {
+                "type": "object",
+                "properties": {
+                    "pincode_mappings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PincodeMapping"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
