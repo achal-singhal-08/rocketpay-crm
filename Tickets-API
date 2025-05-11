@@ -1,0 +1,245 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tickets API",
+        "version": "1.0.0",
+        "description": "RESTful API for managing ticket information. Optimized for Apigee deployment."
+    },
+    "servers": [
+        {
+            "url": "https://34.8.142.182.nip.io"
+        }
+    ],
+    "paths": {
+        "/tickets": {
+            "get": {
+                "summary": "List all tickets",
+                "responses": {
+                    "200": {
+                        "description": "A list of tickets",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TicketsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-filter": {
+                    "type": "RHS-Colon"           
+                }
+            },
+            "post": {
+                "summary": "Create a new ticket",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Ticket"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ticket created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Ticket"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tickets/{id}": {
+            "get": {
+                "summary": "Get a ticket by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ticket details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Ticket"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Ticket not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a ticket by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Ticket"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ticket updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Ticket"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Ticket": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "merchant_id": {
+                        "type": "string"
+                    },
+                    "query_type": {
+                        "type": "string"
+                    },
+                    "key_issue": {
+                        "type": "string"
+                    },
+                    "mandate_issue": {
+                        "type": "string"
+                    },
+                    "imei_number": {
+                        "type": "string"
+                    },
+                    "issue_proof": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "end_customer_number": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "number"
+                    },
+                    "updated_at": {
+                        "type": "number"
+                    },
+                    "freshdesk_ticket_number": {
+                        "type": "string"
+                    },
+                    "assigned_to": {
+                        "type": "string"
+                    },
+                    "ticket_status": {
+                        "type": "string"
+                    },
+                    "latest_comment": {
+                        "type": "string"
+                    },
+                    "ticket_status_updated_at": {
+                        "type": "number"
+                    },
+                    "user_token": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TicketsResponse": {
+                "type": "object",
+                "properties": {
+                    "tickets": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Ticket"
+                        }
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Error"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
