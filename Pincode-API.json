@@ -48,7 +48,7 @@
             "PincodeMappingResponse": {
                 "type": "object",
                 "properties": {
-                    "visits": {
+                    "pincode_mappings": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/PincodeMapping"
