@@ -11,7 +11,7 @@
         }
     ],
     "paths": {
-        "/pincodes": {
+        "/pincode_mappings": {
             "get": {
                 "summary": "List all Pincode Mapping",
                 "responses": {
@@ -66,7 +66,7 @@
                 }
             }
         },
-        "/pincodes/{id}": {
+        "/pincode_mappings/{id}": {
             "get": {
                 "summary": "Get a pincode mapping by ID",
                 "parameters": [
