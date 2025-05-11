@@ -12,7 +12,7 @@
     ],
     "paths": {
         "/pincodes": {
-            "get": {
+              "get": {
                 "summary": "List all Pincode Mapping",
                 "responses": {
                     "200": {
