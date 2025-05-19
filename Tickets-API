@@ -202,6 +202,9 @@
                     "ticket_status_updated_at": {
                         "type": "number"
                     },
+                    "fetch_fd_data": {
+                        "type": "boolean"
+                    },
                     "user_token": {
                         "type": "string"
                     }
