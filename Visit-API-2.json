@@ -32,9 +32,9 @@
                  "x-pagination":{
                    "type": "offset",
                     "limitParam": "limit",
-                    "defaulLimit": "30",
+                    "defaulLimit": 30,
                     "offsetParam": "offset",
-                    "defaultOffset": "0"
+                    "defaultOffset": 0
                  }
             },
             "post": {
