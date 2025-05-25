@@ -28,6 +28,13 @@
                 },
                  "x-filter": {
                     "type": "RHS-Colon"           
+                 },
+                 "x-pagination":{
+                   "type": "offset",
+                    "limitParam": "limit",
+                    "defaulLimit": "30",
+                    "offsetParam": "offset",
+                    "defaultOffset": "0"
                  }
             },
             "post": {
