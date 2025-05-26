@@ -52,7 +52,7 @@
         "x-pagination": {
           "type": "offset",
           "limitParam": "limit",
-          "defaultLimit": 10,
+          "defaultLimit": 100,
           "offsetParam": "offset",
           "defaultOffset": 0
         }
