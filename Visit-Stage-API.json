@@ -11,7 +11,7 @@
         }
     ],
     "paths": {
-        "/staging_visits": {
+        "/visits": {
             "get": {
                 "summary": "List all visits",
                 "responses": {
@@ -66,7 +66,7 @@
                 }
             }
         },
-        "/staging_visits/{id}": {
+        "/visits/{id}": {
             "get": {
                 "summary": "Get a visit by ID",
                 "parameters": [
