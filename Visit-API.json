@@ -216,6 +216,7 @@
           "business_profile": { "type": "string" },
           "business_category": { "type": "string" },
           "business_email_id": { "type": "string" },
+          "vpa_data_string": { "type": "string" },
         }
       },
       "VisitsResponse": {
